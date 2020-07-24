@@ -10,6 +10,7 @@ question [mark]: user.dictate("?")
 dash: user.dictate("-")
 colon: user.dictate(":")
 semi colon: user.dictate(";")
-cap <user.text>: 
+cap <user.text>:
     result = user.formatted_text(user.text, "CAPITALIZE_FIRST_WORD")
-    user.dictate(result)  
+    user.dictate(result)
+delete: key(backspace)

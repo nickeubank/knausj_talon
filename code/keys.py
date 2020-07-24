@@ -85,7 +85,7 @@ ctx.lists["self.modifier"] = {
     "command": "cmd",
     "control": "ctrl",  #'troll':   'ctrl',
     "option": "alt",
-    "shift": "shift",  #'sky':     'shift',
+    "shift": "shift",  'sky':     'shift',
     "super": "super",
 }
 
@@ -255,4 +255,3 @@ class Actions:
     def get_alphabet():
         """Provides the alphabet dictionary"""
         return ctx.lists["user.letter"]
-
