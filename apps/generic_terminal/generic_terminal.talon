@@ -18,3 +18,4 @@ copy paste:
     edit.copy()
     sleep(50ms)
     edit.paste()
+Python: "python"

@@ -15,6 +15,7 @@ extension_lang_map = {
     ".go": "go",
     ".h": "c",
     ".hpp": "cplusplus",
+    ".ipynb": "python",
     ".java": "java",
     ".js": "javascript",
     ".jsx": "javascript",
@@ -36,6 +37,7 @@ extension_lang_map = {
     ".vba": "vba",
     ".vim": "vimscript",
     ".vimrc": "vimscript",
+    ".do": "stata",
 }
 
 @ctx.action_class("code")

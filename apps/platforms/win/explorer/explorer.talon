@@ -1,6 +1,13 @@
+os: windows
 app: windows_explorer
-app: windows_file_browser
+#many commands should work in most save/open dialog. 
+#note the "show options" stuff won't work unless work 
+#unless the path is displayed in the title, which is rare for those
+app: /.*/
+and title: /(Save|Open|Browse|Select)/
+
 -
+
 tag(): user.file_manager
 ^go <user.letter>$: user.file_manager_open_volume("{letter}:")
 go app data: user.file_manager_open_directory("%AppData%")

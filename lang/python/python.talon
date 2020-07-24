@@ -3,6 +3,9 @@ and mode: user.python
 mode: command
 and mode: user.auto_lang
 and code.language: python
+mode: command
+and app: vscode
+# and title: /Interactive/
 -
 tag(): user.code_imperative
 tag(): user.code_object_oriented
@@ -62,3 +65,65 @@ from import:
     edit.word_left()
     key('space')
     edit.left()
+# Pandas
+group by: 
+    insert('groupby([""])')
+    edit.left()
+    edit.left()
+    edit.left()
+
+value counts: "value_counts()"
+value counts missing: "value_counts(dropna=False)"
+value counts normalized: "value_counts(normalize=True)"
+value counts normalized missing: "value_counts(normalize=True, dropna=False)"
+value counts missing normalized: "value_counts(dropna=False, normalize=True)"
+
+# Column was too close to colon, and "col"/"call" 
+# wasn't reliable. So... cake!
+
+cake:
+    insert('[""]')
+    edit.left()
+    edit.left()
+
+cake named <user.text>:
+    insert('["{user.text}"]')
+
+cake list:
+    insert('[[""]]')  
+    edit.left()
+    edit.left()
+    edit.left()    
+
+location: 
+    insert("loc[]")
+    edit.left()
+
+index location: 
+    insert("iloc[]")
+    edit.left()
+
+describe: "describe()"
+columns: "columns"
+as type:
+    insert('astype("")')
+    edit.left()
+    edit.left()
+sample one: "sample().T"
+
+false: "False"
+true: "True"
+
+delete cell: "dd"
+
+split cell:
+	key(ctrl-shift--)
+
+not equals: "!="
+double equals: "=="
+lend:
+    insert('len()')
+    edit.left()
+
+# Backdoor some R
+# gets: " <- "

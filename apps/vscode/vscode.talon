@@ -9,6 +9,8 @@ tag(): user.splits
 tag(): user.tabs
 window reload: user.vscode("workbench.action.reloadWindow")
 window close: user.vscode("workbench.action.closeWindow")
+window switch: key(cmd-`)
+
 #multiple_cursor.py support end
 
 please [<user.text>]:
@@ -209,3 +211,5 @@ cell run above: user.vscode("jupyter.runallcellsabove.palette")
 cell run: user.vscode("jupyter.runcurrentcell")
 
 install local: user.vscode("workbench.extensions.action.installVSIX")
+restart kernel: key(cmd-ctrl-r)
+format cell: key(alt-shift-f)

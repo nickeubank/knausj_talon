@@ -56,7 +56,8 @@ and app.name: signal
 
 apps.termite = """
 os: linux
-and app.name: /termite/
+app.name: /termite/
+not win.title: /VIM/
 """
 
 apps.windows_command_processor = """

@@ -31,6 +31,10 @@ _capitalize_defaults = [
     "October",
     "November",
     "December",
+    "GeoDataFrame",
+    "DataFrame",
+    "Adriane",
+    "Lyra",
 ]
 
 # Default words that need to be remapped.
@@ -38,6 +42,11 @@ _word_map_defaults = {
     # E.g:
     # "cash": "cache",
     # This is the opposite ordering to words_to_replace.csv (the latter has the target word first)
+    "i": "I",
+    "i'm": "I'm",
+    "i've": "I've",
+    "i'll": "I'll",
+    "i'd": "I'd",
 }
 _word_map_defaults.update({word.lower(): word for word in _capitalize_defaults})
 
@@ -60,14 +69,11 @@ ctx.settings["dictate.word_map"] = phrases_to_replace
 
 # Default words that should be added to Talon's vocabulary.
 # Don't edit this. Edit 'additional_vocabulary.csv' instead
-_simple_vocab_default = ["nmap", "admin", "Cisco", "Citrix", "VPN", "DNS", "Minecraft"]
+_simple_vocab_default = []
 
 # Defaults for different pronounciations of words that need to be added to
 # Talon's vocabulary.
-_default_vocabulary = {
-    "N map": "nmap",
-    "under documented": "under-documented",
-}
+_default_vocabulary = {}
 _default_vocabulary.update({word: word for word in _simple_vocab_default})
 
 # "user.vocabulary" is used to explicitly add words/phrases that Talon doesn't

@@ -3,6 +3,7 @@ question [mark]: "?"
 double dash: "--"
 (bracket | brack | left bracket): "{"
 (rbrack | are bracket | right bracket): "}"
+(our | are | R) bracket: "}"
 triple quote: "'''"
 (triple grave | triple back tick | gravy):
     insert("```")
