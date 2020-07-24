@@ -5,7 +5,6 @@ and mode: user.auto_lang
 and code.language: r
 -
 tag(): user.code_imperative
-
 tag(): user.code_comment_line
 tag(): user.code_data_bool
 tag(): user.code_data_null
@@ -45,3 +44,7 @@ state na:
 ^function define <user.text>$: user.code_private_function(text)
 
 named arg {user.code_parameter_name}: user.code_insert_named_argument(code_parameter_name)
+gets: " <- "
+stop if not: 
+    insert("stopifnot()")
+    edit.left()

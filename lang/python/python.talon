@@ -4,7 +4,8 @@ mode: command
 and mode: user.auto_lang
 and code.language: python
 mode: command
-and app: vscode
+band code.language: jupyter_notebook
+# mode: command
 # and title: /Interactive/
 -
 tag(): user.code_imperative
@@ -65,22 +66,67 @@ from import:
     edit.word_left()
     key('space')
     edit.left()
+
+
+dataframes: "df"
+
+import pandas: "import pandas as pd"
+import geopandas: "import geopandas as gpd"
+import numpy: "import numpy as np"
+
+# Numpy/Pandas Methods
+describe: ".describe()"
+columns: ".columns"
+head: ".head()"
+mean: ".mean()"
+copy: ".copy()"
+all: ".all()"
+any: ".any()"
+not N/A: ".notna()"
+is N/A: ".isna()"
+hist: ".hist()"
+drop:
+    insert('.drop(columns=[""])')
+    key(left:3)
+rename:
+    insert('.rename(columns={})')
+    key(left:3)
+    
+assert: "assert "
+sort index: ".sort_index()"
+sort values: 
+    insert('.sort_values("")')
+    edit.left()
+    edit.left()
+
+is in: 
+    insert(".isin([])")
+    edit.left()
+    edit.left()
+
+as type:
+    insert('.astype("")')
+    edit.left()
+    edit.left()
+sample one: ".sample().T"
+
 # Pandas
 group by: 
-    insert('groupby([""])')
-    edit.left()
-    edit.left()
-    edit.left()
+    insert('.groupby([""], as_index=False)')
+    key(left:19)
 
-value counts: "value_counts()"
-value counts missing: "value_counts(dropna=False)"
-value counts normalized: "value_counts(normalize=True)"
-value counts normalized missing: "value_counts(normalize=True, dropna=False)"
-value counts missing normalized: "value_counts(dropna=False, normalize=True)"
+join:
+    insert('.merge(, how="outer", indicator=True, validate="1:1")')
+    key(left:46)
 
-# Column was too close to colon, and "col"/"call" 
-# wasn't reliable. So... cake!
+merge: "merge"
 
+value counts: ".value_counts()"
+value counts missing: ".value_counts(dropna=False)"
+value counts normalized: ".value_counts(normalize=True)"
+value counts normalized missing: ".value_counts(normalize=True, dropna=False)"
+value counts missing normalized: ".value_counts(dropna=False, normalize=True)"
+underscore merge: "_merge"
 cake:
     insert('[""]')
     edit.left()
@@ -96,34 +142,32 @@ cake list:
     edit.left()    
 
 location: 
-    insert("loc[]")
+b    insert(".loc[]")
     edit.left()
 
 index location: 
-    insert("iloc[]")
+    insert(".iloc[]")
     edit.left()
 
-describe: "describe()"
-columns: "columns"
-as type:
-    insert('astype("")')
-    edit.left()
-    edit.left()
-sample one: "sample().T"
+axis columns:'axis="columns"'
+
+# Regular Python
 
 false: "False"
 true: "True"
 
-delete cell: "dd"
+not equals: " != "
+double equals: " == "
+greater equal: " >= "
+less than equal: " <= "
+gets: " = "
 
-split cell:
-	key(ctrl-shift--)
+print: 
+    insert("print()")
+    edit.left()
 
-not equals: "!="
-double equals: "=="
 lend:
     insert('len()')
     edit.left()
-
-# Backdoor some R
-# gets: " <- "
+Geo Chaisson: "geojson"
+    

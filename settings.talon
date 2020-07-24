@@ -1,5 +1,8 @@
 -
 settings():
+    # Timing
+    speech.timeout = 0.3
+
     # Adjust the scale of the imgui to my liking
     imgui.scale = 1.3
 

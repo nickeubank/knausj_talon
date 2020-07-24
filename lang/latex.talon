@@ -1,8 +1,19 @@
-mode: user.latex
 mode: command
-and code.language: latex
+code.language: latex
+
 -
 
-(pause): key(\pause)
-(item): key(\item)
-build that: key(command-b)
+pause: insert("\pause")
+item: insert("\item")
+build that: key(cmd-b)
+
+# Formatting
+italicize:
+    key(cmd-l)
+    key(cmd-e)
+
+bold:
+    key(cmd-l)
+    key(cmd-b)
+
+itemize: "BIT"

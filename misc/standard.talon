@@ -42,41 +42,70 @@ funny: "ha ha"
 #menu: key(alt)
 
 # Nick Navigation Helpers
-push: edit.word_right()
-pull:edit.word_left() 
-jump: edit.line_end()
-jump left:edit.line_start() 
+star: edit.word_right()
+port:edit.word_left() 
+star hard: edit.line_end()
+port hard:edit.line_start() 
 
 
-select jump:
+select star hard:
 	key('cmd-shift-right')
-select jump left:
+select port hard:
 	key('cmd-shift-left')
-select pull: 
+select port:
 	key('alt-shift-left')
-select push: 
+select star: 
 	key('alt-shift-right')
 
+# Jupyter and Global Code Running
 run that:
+	key(shift-enter)
+execute:
 	key(shift-enter)
 run to here:
 	key(alt-shift-enter)
-run file:
+execute to here:
+	key(alt-shift-enter)
+execute file:
 	key(cmd-shift-enter)
-screen right:
+desk right:
 	key(ctrl-right)
-screen left:
+desk left:
 	key(ctrl-left)
-
 run new:
 	key(alt-enter)
-
+execute new:
+	key(alt-enter)
+execute all:
+	key(cmd-shift-enter)
+delete cell: "dd"
+split cell:
+	key(ctrl-shift--)
+restart kernel:
+	key(cmd-ctrl-r)
 
 e-mail address: "nick@nickeubank.com"
 zoom link: "https://duke.zoom.us/my/nickeubank"
 screenshot:
 	key(cmd-shift-4)
 
+emdash: user.paste("—")
+
 thumbs up: user.paste("👍️️")
 facepalm: user.paste("🤦‍♂️")
+shrug: user.paste("🤷‍♂️")
+:-): user.paste("🙂")
+laughing: user.paste("🤣")
 
+alpha: user.paste("α")
+beta: user.paste("β")
+gamma: user.paste("γ")
+delta: user.paste("δ")
+epsilon: user.paste("ϵ")
+mu: user.paste("μ")
+pi: user.paste("π")
+sigma: user.paste("σ")
+tau: user.paste("τ")
+
+highlight that:
+	key(cmd-ctrl-h)

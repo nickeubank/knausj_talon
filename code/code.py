@@ -26,6 +26,7 @@ extension_lang_map = {
     ".ps1": "powershell",
     ".py": "python",
     ".r": "r",
+    ".R": "r",
     ".rb": "ruby",
     ".s": "assembly",
     ".sh": "bash",
@@ -38,7 +39,10 @@ extension_lang_map = {
     ".vim": "vimscript",
     ".vimrc": "vimscript",
     ".do": "stata",
+    ".tex": "latex",
+    ".ipynb": "jupyter_notebook",
 }
+
 
 @ctx.action_class("code")
 class code_actions:
@@ -51,6 +55,7 @@ class code_actions:
         # print("code.language: " + result)
         return result
 
+
 # create a mode for each defined language
 for __, lang in extension_lang_map.items():
     mod.mode(lang)
@@ -60,6 +65,7 @@ mod.mode("auto_lang")
 
 # Auto lang is enabled by default
 app.register("ready", lambda: actions.user.code_clear_language_mode())
+
 
 @mod.action_class
 class Actions:
