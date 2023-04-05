@@ -12,7 +12,7 @@ italicize:
     key(cmd-l)
     key(cmd-e)
 
-bold:
+embolden:
     key(cmd-l)
     key(cmd-b)
 

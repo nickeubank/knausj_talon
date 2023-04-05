@@ -67,8 +67,7 @@ formatted <user.format_text>:
     user.formatters_reformat_selection(formatters)
 
 # Corrections
-scratch that: user.clear_last_phrase()
-scratch selection: edit.delete()
+# scratch that: user.clear_last_phrase()
 select that: user.select_last_phrase()
 spell that <user.letters>: auto_insert(letters)
 spell that <user.formatters> <user.letters>:
@@ -136,7 +135,7 @@ formatted <user.format_text>:
     user.auto_format_pause()
     auto_insert(result)
     user.auto_format_resume()
-scratch that: user.clear_last_utterance()
+# scratch that: user.clear_last_utterance()
 spell that <user.formatters> <user.letters>:
     result = dictate.join_words(user.letters, "")
     result = user.formatted_text(result, formatters)

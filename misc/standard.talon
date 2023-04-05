@@ -22,7 +22,9 @@ undo that: edit.undo()
 redo that: edit.redo()
 paste match: edit.paste_match_style()
 file save: edit.save()
-wipe: key(backspace)    
+wipe: key(backspace)
+scratch: key(backspace)
+scratch that: key(backspace)
 (pad | padding): 
 	insert("  ") 
 	key(left)
@@ -84,28 +86,42 @@ split cell:
 restart kernel:
 	key(cmd-ctrl-r)
 
-e-mail address: "nick@nickeubank.com"
+email address: "nick@nickeubank.com"
+phone number: "3039186528"
 zoom link: "https://duke.zoom.us/my/nickeubank"
 screenshot:
 	key(cmd-shift-4)
 
 emdash: user.paste("—")
+end dash: user.paste("—")
 
 thumbs up: user.paste("👍️️")
 facepalm: user.paste("🤦‍♂️")
 shrug: user.paste("🤷‍♂️")
 :-): user.paste("🙂")
 laughing: user.paste("🤣")
+angry: user.paste("🤬")
 
-alpha: user.paste("α")
-beta: user.paste("β")
-gamma: user.paste("γ")
-delta: user.paste("δ")
-epsilon: user.paste("ϵ")
-mu: user.paste("μ")
-pi: user.paste("π")
-sigma: user.paste("σ")
-tau: user.paste("τ")
+emoji keyboard:
+	key(cmd-ctrl-space)
+
+# alpha: user.paste("α")
+# beta: user.paste("β")
+# gamma: user.paste("γ")
+# delta: user.paste("δ")
+# epsilon: user.paste("ϵ")
+# mu: user.paste("μ")
+# pi: user.paste("π")
+# sigma: user.paste("σ")
+# tau: user.paste("τ")
 
 highlight that:
 	key(cmd-ctrl-h)
+
+egg:
+	insert("(e.g., )")
+	key(left)
+
+sausage:
+	insert("(i.e., )")
+	key(left)

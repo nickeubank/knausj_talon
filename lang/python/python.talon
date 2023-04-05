@@ -4,7 +4,7 @@ mode: command
 and mode: user.auto_lang
 and code.language: python
 mode: command
-band code.language: jupyter_notebook
+and code.language: jupyter_notebook
 # mode: command
 # and title: /Interactive/
 -
@@ -89,15 +89,14 @@ drop:
     insert('.drop(columns=[""])')
     key(left:3)
 rename:
-    insert('.rename(columns={})')
+    insert('.rename(columns={""})')
     key(left:3)
     
 assert: "assert "
 sort index: ".sort_index()"
 sort values: 
-    insert('.sort_values("")')
-    edit.left()
-    edit.left()
+    insert('.sort_values([""])')
+    key(left:3)
 
 is in: 
     insert(".isin([])")
@@ -108,7 +107,9 @@ as type:
     insert('.astype("")')
     edit.left()
     edit.left()
-sample one: ".sample().T"
+sample one: 
+    insert(".sample().T")
+    key(shift-enter)
 
 # Pandas
 group by: 
@@ -142,7 +143,7 @@ cake list:
     edit.left()    
 
 location: 
-b    insert(".loc[]")
+    insert(".loc[]")
     edit.left()
 
 index location: 
@@ -162,12 +163,26 @@ greater equal: " >= "
 less than equal: " <= "
 gets: " = "
 
-print: 
+print that: 
     insert("print()")
     edit.left()
 
-lend:
-    insert('len()')
-    edit.left()
+# l:
+#     insert('len()')
+#     edit.left()
 Geo Chaisson: "geojson"
     
+transform: 
+    insert(".transform()")
+    edit.left()
+
+duplicated:
+    insert(".duplicated()")
+
+
+not no: ".notnull()"
+(is na|is null): ".isnull()"
+not a number: "np.nan"
+
+lambda:
+    insert("lambda x: ")

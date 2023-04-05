@@ -48,3 +48,10 @@ folder last: user.file_manager_previous_folder_page()
 file next: user.file_manager_next_file_page()
 file last: user.file_manager_previous_file_page()
 
+please <user.text>:
+    key(cmd-space)
+    sleep(1)
+    insert(text or "")
+
+please:
+    key(cmd-space)
