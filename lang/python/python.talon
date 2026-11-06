@@ -70,9 +70,18 @@ from import:
 
 dataframes: "df"
 
-import pandas: "import pandas as pd"
+import pandas: 
+    
+import pandas: 
+    insert("""
+    import pandas as pd
+    import numpy as np
+    pd.set_option("mode.copy_on_write", True)
+    """)
+
 import geopandas: "import geopandas as gpd"
 import numpy: "import numpy as np"
+import stats models: "import statsmodels.formula.api as smf"
 
 # Numpy/Pandas Methods
 describe: ".describe()"
@@ -85,9 +94,9 @@ any: ".any()"
 not N/A: ".notna()"
 is N/A: ".isna()"
 hist: ".hist()"
-drop:
-    insert('.drop(columns=[""])')
-    key(left:3)
+# drop:
+#     insert('.drop(columns=[""])')
+#     key(left:3)
 rename:
     insert('.rename(columns={""})')
     key(left:3)
@@ -186,3 +195,86 @@ not a number: "np.nan"
 
 lambda:
     insert("lambda x: ")
+
+filter:
+    insert('.filter(regex="", axis="columns")')
+    key(left:18)
+
+
+###########
+# pymc
+###########
+
+beta:
+    insert('pm.Beta("", alpha=, beta=)')
+    key(left:17)
+beta: 
+    insert('pm.Beta("", alpha=, beta=)')
+    key(left:17)
+    
+
+import pymc:
+    insert("""
+    import pymc as pm
+    import arviz as az
+    """)
+
+
+
+###########
+# Plotting
+###########
+
+
+import seaborn: 
+    insert("""
+    import seaborn.objects as so
+    import seaborn as sns
+    from matplotlib import style
+    """)
+
+seaborn plot: 
+    insert("""(so.Plot(, x="", y="").add(so.)
+        .label(title="")
+        .theme({{**style.library["seaborn-whitegrid"]}})
+    """)
+    key(up:3)
+    key(right:8)
+
+seaborn lowess:
+    insert("""
+    from __future__ import annotations
+    from dataclasses import dataclass
+
+    import pandas as pd
+
+    from seaborn._stats.base import Stat
+    import statsmodels.api as sm
+
+
+    @dataclass
+    class Lowess(Stat):
+        '''
+        Fit a LOWESS smooth of data.  Modeled on PolyFit.
+        '''
+        frac: float = 0.2  # Mysterious incantation to make the argument work.
+        def _fit(self, data):
+            self.frac = min(self.frac, 1.0)
+            x = data["x"]
+            y = data["y"]
+            yy = sm.nonparametric.lowess(exog=x, endog=y, frac=self.frac)
+            df = pd.DataFrame(data = yy, columns = ("x", "y") )
+
+            return df
+
+        # TODO we should have a way of identifying the method that will be applied
+        # and then only define __call__ on a base-class of stats with this pattern
+
+        def __call__(self, data, groupby, orient, scales):
+
+            return (
+                groupby
+                .apply(data.dropna(subset=["x", "y"]), self._fit)
+            )
+    """)
+

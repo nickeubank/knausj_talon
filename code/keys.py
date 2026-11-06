@@ -174,6 +174,7 @@ symbol_key_words = {
     "plus": "+",
     "tilde": "~",
     "bang": "!",
+    "bake": "!",
     "exclaim": "!",
     "down score": "_",
     "under score": "_",

@@ -17,3 +17,7 @@ embolden:
     key(cmd-b)
 
 itemize: "BIT"
+
+cleanup:
+    key(cmd-l)
+    key(backspace)

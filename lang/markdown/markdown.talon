@@ -16,3 +16,9 @@ level six: "###### "
     key(enter:2)
     "```"
     key(up)
+
+italicize: 
+    key(cmd-i)
+
+embolden: 
+    key(cmd-b)

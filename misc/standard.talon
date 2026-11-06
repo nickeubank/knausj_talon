@@ -30,6 +30,9 @@ scratch that: key(backspace)
 	key(left)
 slap:
 	key(enter)
+jump:
+	key(enter)
+
 volume up: key(volup)
 volume down: key(voldown)
 mute: key(mute)
@@ -101,15 +104,16 @@ shrug: user.paste("🤷‍♂️")
 :-): user.paste("🙂")
 laughing: user.paste("🤣")
 angry: user.paste("🤬")
+heart: user.paste("❤️")
 
 emoji keyboard:
 	key(cmd-ctrl-space)
 
-# alpha: user.paste("α")
-# beta: user.paste("β")
+alpha: user.paste("α")
+beta: user.paste("β")
 # gamma: user.paste("γ")
 # delta: user.paste("δ")
-# epsilon: user.paste("ϵ")
+epsilon: user.paste("ϵ")
 # mu: user.paste("μ")
 # pi: user.paste("π")
 # sigma: user.paste("σ")
